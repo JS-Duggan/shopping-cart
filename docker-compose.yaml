@@ -1,0 +1,8 @@
+services:
+  inventory-service:
+    build:
+      context: ./inventory-service
+    ports:
+      - "4000:80"
+    volumes:
+      - ./inventory-service:/app
