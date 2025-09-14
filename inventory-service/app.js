@@ -19,7 +19,7 @@ client.connect()
     .catch((err) => console.error(`Error connecting to DB: ${err}`));
 
 app.post('/inventory/adjustment', async (req, res) => {
-    const { sku, delta, reason } = req.query;
+    const { sku, delta, reason } = req.body;
     const deltaInt = parseInt(delta, 10);
 
     try {
@@ -32,7 +32,7 @@ app.post('/inventory/adjustment', async (req, res) => {
 });
 
 app.get('/inventory/availability', async (req, res) => {
-
+    const skus = req.query.skus.split(',');
 });
 
 
